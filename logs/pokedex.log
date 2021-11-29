@@ -1,0 +1,30 @@
+2021-11-29 09:04:32 [main] INFO  c.b.d.p.pokeapp.PokeApplication - Starting PokeApplication using Java 11.0.10 on LAPTOP-SC2LBLGV with PID 16152 (C:\Users\luis_\Documents\learning\pokedex\pokeapp\target\classes started by luis in C:\Users\luis_\Documents\learning\pokedex)
+2021-11-29 09:04:32 [main] INFO  c.b.d.p.pokeapp.PokeApplication - No active profile set, falling back to default profiles: default
+2021-11-29 09:04:33 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 09:04:33 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interfaces.
+2021-11-29 09:04:33 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'webServiceConfig' of type [com.bankaya.deliverable.pokedex.pokeapp.config.WebServiceConfig$$EnhancerBySpringCGLIB$$d5be2858] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-29 09:04:33 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$ae497fb6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-29 09:04:33 [main] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-11-29 09:04:34 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-11-29 09:04:34 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-11-29 09:04:34 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2021-11-29 09:04:34 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 09:04:34 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-11-29 09:04:34 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2211 ms
+2021-11-29 09:04:34 [main] INFO  com.zaxxer.hikari.HikariDataSource - pokedexConnPool - Starting...
+2021-11-29 09:04:34 [main] INFO  com.zaxxer.hikari.HikariDataSource - pokedexConnPool - Start completed.
+2021-11-29 09:04:34 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:mydb'
+2021-11-29 09:04:35 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 09:04:35 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-11-29 09:04:35 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-29 09:04:35 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-11-29 09:04:36 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 09:04:36 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 09:04:36 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 09:04:36 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-11-29 09:04:37 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-29 09:04:37 [main] INFO  c.b.d.p.pokeapp.PokeApplication - Started PokeApplication in 5.328 seconds (JVM running for 6.347)
+2021-11-29 09:04:49 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 09:04:49 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-11-29 09:04:49 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - pokedexConnPool - Shutdown initiated...
+2021-11-29 09:04:49 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - pokedexConnPool - Shutdown completed.

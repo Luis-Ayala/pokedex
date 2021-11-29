@@ -1,0 +1,26 @@
+pokeapi-service:
+  - https://pokeapi.co/api
+  - v2
+  - pokemon
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: sa
+    driverClassName: org.h2.Driver
+    hikari:
+      idle-timeout: 10000
+      minimum-idle: 1
+      maximum-pool-size: 5
+      pool-name: pokedexConnPool
+      auto-commit: true
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization=true:
+  h2:
+    console.enabled: true
+    console.path: /h2-console
+    console.settings.trace: false
+    spring.h2.console.settings.web-allow-others: false

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ea8ab550-2a5f-4f22-9afb-0c70952504ef" activeEnvironment="Default" name="pokedex" resourceRoot="" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="8ebac4c7-9c14-4be2-a84b-7cb5af055f03" wsaVersion="NONE" name="PokedexPortSoap11" type="wsdl" bindingName="{http://bankaya.com/deliverable/pokedex/ws}PokedexPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws/pokedex.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws/pokedex.wsdl"><con:part><con:url>http://localhost:8080/ws/pokedex.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://bankaya.com/deliverable/pokedex/ws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://bankaya.com/deliverable/pokedex/ws" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://bankaya.com/deliverable/pokedex/ws">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://bankaya.com/deliverable/pokedex/ws" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getPokemonAbilitiesRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pokemon" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPokemonAbilitiesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="abilities" type="tns:abilities"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="abilities">
+        <xs:sequence>
+          <xs:element name="ability" type="tns:namedAPIResource"/>
+          <xs:element name="isHidden" type="xs:boolean"/>
+          <xs:element name="slot" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getPokemonBaseExperienceRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pokemon" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPokemonBaseExperienceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="base_experience" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPokemonIdRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pokemon" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPokemonIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPokemonNameRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pokemon" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPokemonNameResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPokemonLocationAreaEncountersRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pokemon" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPokemonLocationAreaEncountersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="location_area_encounters" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPokemonHeldItemsRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pokemon" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPokemonHeldItemsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="held_items" type="tns:items"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Common objects-->
+      <!---->
+      <!---->
+      <xs:complexType name="items">
+        <xs:sequence>
+          <xs:element name="item" type="tns:namedAPIResource"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="version_details" type="tns:versionDetails"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="namedAPIResource">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="versionDetails">
+        <xs:sequence>
+          <xs:element name="rarity" type="xs:int"/>
+          <xs:element name="version" type="tns:namedAPIResource"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="exceptionDetail">
+        <xs:sequence>
+          <xs:element name="code" type="xs:string"/>
+          <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getPokemonAbilitiesResponse">
+    <wsdl:part element="tns:getPokemonAbilitiesResponse" name="getPokemonAbilitiesResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPokemonBaseExperienceResponse">
+    <wsdl:part element="tns:getPokemonBaseExperienceResponse" name="getPokemonBaseExperienceResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPokemonNameRequest">
+    <wsdl:part element="tns:getPokemonNameRequest" name="getPokemonNameRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPokemonNameResponse">
+    <wsdl:part element="tns:getPokemonNameResponse" name="getPokemonNameResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPokemonAbilitiesRequest">
+    <wsdl:part element="tns:getPokemonAbilitiesRequest" name="getPokemonAbilitiesRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPokemonIdResponse">
+    <wsdl:part element="tns:getPokemonIdResponse" name="getPokemonIdResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPokemonBaseExperienceRequest">
+    <wsdl:part element="tns:getPokemonBaseExperienceRequest" name="getPokemonBaseExperienceRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPokemonLocationAreaEncountersRequest">
+    <wsdl:part element="tns:getPokemonLocationAreaEncountersRequest" name="getPokemonLocationAreaEncountersRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPokemonIdRequest">
+    <wsdl:part element="tns:getPokemonIdRequest" name="getPokemonIdRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPokemonLocationAreaEncountersResponse">
+    <wsdl:part element="tns:getPokemonLocationAreaEncountersResponse" name="getPokemonLocationAreaEncountersResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPokemonHeldItemsRequest">
+    <wsdl:part element="tns:getPokemonHeldItemsRequest" name="getPokemonHeldItemsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPokemonHeldItemsResponse">
+    <wsdl:part element="tns:getPokemonHeldItemsResponse" name="getPokemonHeldItemsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PokedexPort">
+    <wsdl:operation name="getPokemonAbilities">
+      <wsdl:input message="tns:getPokemonAbilitiesRequest" name="getPokemonAbilitiesRequest"></wsdl:input>
+      <wsdl:output message="tns:getPokemonAbilitiesResponse" name="getPokemonAbilitiesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPokemonBaseExperience">
+      <wsdl:input message="tns:getPokemonBaseExperienceRequest" name="getPokemonBaseExperienceRequest"></wsdl:input>
+      <wsdl:output message="tns:getPokemonBaseExperienceResponse" name="getPokemonBaseExperienceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPokemonName">
+      <wsdl:input message="tns:getPokemonNameRequest" name="getPokemonNameRequest"></wsdl:input>
+      <wsdl:output message="tns:getPokemonNameResponse" name="getPokemonNameResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPokemonId">
+      <wsdl:input message="tns:getPokemonIdRequest" name="getPokemonIdRequest"></wsdl:input>
+      <wsdl:output message="tns:getPokemonIdResponse" name="getPokemonIdResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPokemonLocationAreaEncounters">
+      <wsdl:input message="tns:getPokemonLocationAreaEncountersRequest" name="getPokemonLocationAreaEncountersRequest"></wsdl:input>
+      <wsdl:output message="tns:getPokemonLocationAreaEncountersResponse" name="getPokemonLocationAreaEncountersResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPokemonHeldItems">
+      <wsdl:input message="tns:getPokemonHeldItemsRequest" name="getPokemonHeldItemsRequest"></wsdl:input>
+      <wsdl:output message="tns:getPokemonHeldItemsResponse" name="getPokemonHeldItemsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PokedexPortSoap11" type="tns:PokedexPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getPokemonAbilities">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getPokemonAbilitiesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPokemonAbilitiesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPokemonBaseExperience">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getPokemonBaseExperienceRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPokemonBaseExperienceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPokemonName">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getPokemonNameRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPokemonNameResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPokemonId">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getPokemonIdRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPokemonIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPokemonLocationAreaEncounters">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getPokemonLocationAreaEncountersRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPokemonLocationAreaEncountersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPokemonHeldItems">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getPokemonHeldItemsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPokemonHeldItemsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PokedexPortService">
+    <wsdl:port binding="tns:PokedexPortSoap11" name="PokedexPortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="d5b75058-d94b-484d-b244-c4fd0f37d198" isOneWay="false" action="" name="getPokemonAbilities" bindingOperationName="getPokemonAbilities" type="Request-Response" outputName="getPokemonAbilitiesResponse" inputName="getPokemonAbilitiesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="16eb1be4-035d-4e8e-90ee-a344eba03b20" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://bankaya.com/deliverable/pokedex/ws">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:getPokemonAbilitiesRequest>\r
+         <ws:pokemon>ditto</ws:pokemon>\r
+      </ws:getPokemonAbilitiesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bankaya.com/deliverable/pokedex/ws/PokedexPort/getPokemonAbilitiesRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="440c38b8-f2fc-474a-af6e-b479a2f33aba" isOneWay="false" action="" name="getPokemonBaseExperience" bindingOperationName="getPokemonBaseExperience" type="Request-Response" outputName="getPokemonBaseExperienceResponse" inputName="getPokemonBaseExperienceRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8caff787-1ed6-4727-be04-0a5c57b12359" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://bankaya.com/deliverable/pokedex/ws">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:getPokemonBaseExperienceRequest>\r
+         <ws:pokemon>ditto</ws:pokemon>\r
+      </ws:getPokemonBaseExperienceRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bankaya.com/deliverable/pokedex/ws/PokedexPort/getPokemonBaseExperienceRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="1f9ed655-3285-4274-9c03-84bdc337ab74" isOneWay="false" action="" name="getPokemonHeldItems" bindingOperationName="getPokemonHeldItems" type="Request-Response" outputName="getPokemonHeldItemsResponse" inputName="getPokemonHeldItemsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9bf7144a-696a-4ab8-ac88-30007815c3b9" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://bankaya.com/deliverable/pokedex/ws">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:getPokemonHeldItemsRequest>\r
+         <ws:pokemon>ditto</ws:pokemon>\r
+      </ws:getPokemonHeldItemsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bankaya.com/deliverable/pokedex/ws/PokedexPort/getPokemonHeldItemsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0e167e4d-f1a0-413f-925d-568eea451159" isOneWay="false" action="" name="getPokemonId" bindingOperationName="getPokemonId" type="Request-Response" outputName="getPokemonIdResponse" inputName="getPokemonIdRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="be1aaff3-7fcb-4f53-855d-099875d19965" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://bankaya.com/deliverable/pokedex/ws">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:getPokemonIdRequest>\r
+         <ws:pokemon>ditto</ws:pokemon>\r
+      </ws:getPokemonIdRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bankaya.com/deliverable/pokedex/ws/PokedexPort/getPokemonIdRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="73e74786-d6b4-4722-b450-da7e5662032b" isOneWay="false" action="" name="getPokemonLocationAreaEncounters" bindingOperationName="getPokemonLocationAreaEncounters" type="Request-Response" outputName="getPokemonLocationAreaEncountersResponse" inputName="getPokemonLocationAreaEncountersRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c2bd4ae2-f50c-49c4-96af-a25294ee4d35" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://bankaya.com/deliverable/pokedex/ws">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:getPokemonLocationAreaEncountersRequest>\r
+         <ws:pokemon>ditto</ws:pokemon>\r
+      </ws:getPokemonLocationAreaEncountersRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bankaya.com/deliverable/pokedex/ws/PokedexPort/getPokemonLocationAreaEncountersRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a2e4b8b6-9f32-45fd-ada7-647eaa534ab9" isOneWay="false" action="" name="getPokemonName" bindingOperationName="getPokemonName" type="Request-Response" outputName="getPokemonNameResponse" inputName="getPokemonNameRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="297890dd-ea07-4157-a89b-f0c1569131cc" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://bankaya.com/deliverable/pokedex/ws">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:getPokemonNameRequest>\r
+         <ws:pokemon>ditto</ws:pokemon>\r
+      </ws:getPokemonNameRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bankaya.com/deliverable/pokedex/ws/PokedexPort/getPokemonNameRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
